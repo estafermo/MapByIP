@@ -1,0 +1,16 @@
+GEM
+  specs:
+    geocoder (1.4.0)
+    rack (2.0.1)
+    roda (2.19.0)
+      rack
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  geocoder
+  roda
+
+BUNDLED WITH
+   1.10.6
