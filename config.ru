@@ -1,6 +1,6 @@
 # config.ru
 require "roda"
-require 'geocoder'
+require "geocoder"
 
 class App < Roda
   plugin :render
