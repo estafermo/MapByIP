@@ -1,0 +1,27 @@
+<html>
+<head><title>Simple Google Map by ip</title>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+ <script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+ <script src="http://maps.google.com/maps/api/js?v=3.23&key=AIzaSyD2Nbd6l_pehb5i65lB2_5aB1ng4hgHkd8 " type="text/javascript"></script>
+<meta charset="UTF-8" /> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+
+<div class="jumbotron text-center">
+  <h1>Geolocating IP's from a static file</h1>
+  <p>Please read 'about' before playing with it</p> 
+</div>
+<div class="container">
+	<ul class="nav nav-tabs">
+	  <li id="li_index"><a href="/">Index</a></li>
+	  <li id="li_about"><a href="/about">About</a></li>
+	</ul>
+	<br />
+	<%= yield %>
+</div>
+</body>
+</html>

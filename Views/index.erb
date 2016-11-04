@@ -1,0 +1,62 @@
+
+
+ 
+<div id="googleMap" style="width: 100%; height: 400px;"></div>
+
+<hr />
+<p>Show me in tabular form:
+<table id="content_table" class="table">
+<thead>
+<tr>
+<th>IP</th>
+<th>Coordinates</th>
+</tr>
+</thead>
+<tbody>
+<% content.each do |item| %>
+<tr>
+<td><%= item[0] %></td>
+<td><%= item[1] %></td>
+</tr>
+<% end %>
+</tbody>
+</table>
+
+
+ <script type="text/javascript">
+$(document).ready(function(){
+         var coordinates = new google.maps.LatLng(41.1547278,-8.6593615);
+         var mapOptions = {
+           center: coordinates,
+           zoom:2,
+           mapTypeId:google.maps.MapTypeId.ROADMAP
+         };
+         var mapContainer = $("#googleMap")[0];
+
+         var map = new google.maps.Map(mapContainer, mapOptions);
+
+
+         var rows = $("#content_table tr:gt(0)"); // skip the header row
+
+    	 rows.each(function(index) {
+    	    var value_ip=$(this).closest('tr').children('td:first').text();
+    	    var value_coordinates=$(this).closest('tr').children('td:nth-child(2)').text();
+    	 	//console.log(value_ip);
+    	 	//console.log(value_coordinates);
+    	 	var newlat=value_coordinates.split(',')[0].slice(1);
+    	 	var newlng=value_coordinates.split(',')[1].slice(0,-1);
+    	 	//console.log(newlat);
+    	 	//console.log(newlng);
+    	 	//add to map
+    	 	new google.maps.Marker({
+    	 		position: {lat:parseFloat(newlat),lng:parseFloat(newlng)},
+    	 		map:map,
+    	 		title:value_ip});
+
+    		});
+
+       });
+
+	$("#li_index").addClass("active");
+
+</script>
