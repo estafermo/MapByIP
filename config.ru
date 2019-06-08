@@ -11,9 +11,11 @@ class App < Roda
     r.root do
       location=Hash.new 
       File.readlines('ips.txt').each do |line|
-        line=line.chomp      
+        line=line.chomp    
+        puts line  
         if (Geocoder::IpAddress.new(line).valid?) 
-          location[line]=Geocoder.coordinates(line)
+          location[line]=Geocoder.search(line)
+          puts "AAAAAA"
         end       
       end
 
